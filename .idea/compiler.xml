@@ -25,5 +25,8 @@
         <module name="4finance" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="4finance" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

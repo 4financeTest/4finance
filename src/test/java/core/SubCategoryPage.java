@@ -33,7 +33,6 @@ public class SubCategoryPage {
         List<WebElement> menuItems = baseFunctions.findElements(MENU_SUBCATEGORY);
         List<SubCategoryMenuWrapper> result = new ArrayList<SubCategoryMenuWrapper>();
         Iterables.addAll(result, Iterables.transform(menuItems, new Function<WebElement, SubCategoryMenuWrapper>() {
-            @Override
             public SubCategoryMenuWrapper apply(WebElement webElement) {
                 return new SubCategoryMenuWrapper(baseFunctions, webElement);
             }
@@ -50,7 +49,6 @@ public class SubCategoryPage {
      */
     public SubCategoryMenuWrapper getSubMenuItemByName(final String name) {
         Optional<SubCategoryMenuWrapper> wrapper = Iterables.tryFind(getAllMenuItems(), new Predicate<SubCategoryMenuWrapper>() {
-            @Override
             public boolean apply(SubCategoryMenuWrapper subCategoryMenuWrapper) {
                 return subCategoryMenuWrapper.getSubMenuName().equals(name);
             }

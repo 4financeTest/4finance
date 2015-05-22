@@ -58,7 +58,6 @@ public class HomePage{
         List<WebElement> menuItems = baseFunctions.findElements(MENU_ITEM);
         List<MainMenuWrapper> result = new ArrayList<MainMenuWrapper>();
         Iterables.addAll(result, Iterables.transform(menuItems, new Function<WebElement, MainMenuWrapper>() {
-            @Override
             public MainMenuWrapper apply(WebElement webElement) {
                 return new MainMenuWrapper(baseFunctions, webElement);
             }
@@ -75,7 +74,6 @@ public class HomePage{
      */
     public MainMenuWrapper getMenuItemByName(final String name) {
         Optional<MainMenuWrapper> wrapper = Iterables.tryFind(getAllMenuItems(), new Predicate<MainMenuWrapper>() {
-            @Override
             public boolean apply(MainMenuWrapper mainMenuWrapper) {
                 return mainMenuWrapper.getMenuName().contains(name);
             }

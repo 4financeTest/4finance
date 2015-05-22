@@ -46,7 +46,7 @@ public class TestAccountRestore{
         LOGGER.info("User goes to SignIn page");
         SignInPage signInPage = homePage.clickSignInButton();
 
-        LOGGER.info("User clocks to Forgot Password link");
+        LOGGER.info("User clicks to Forgot Password link");
         PasswordRecoveryPage recoveryPage = signInPage.clickForgotPasswordLink();
 
         LOGGER.info("Filling E-mail fields with: " + LOGIN + " and submitting form");

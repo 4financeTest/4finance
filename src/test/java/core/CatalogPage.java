@@ -41,7 +41,6 @@ public class CatalogPage {
         List<WebElement> items = baseFunctions.findElements(CURRENCY_ITEM);
         List<CurrencyWrapper> result = new ArrayList<CurrencyWrapper>();
         Iterables.addAll(result, Iterables.transform(items, new Function<WebElement, CurrencyWrapper>() {
-            @Override
             public CurrencyWrapper apply(WebElement element) {
                 return new CurrencyWrapper(baseFunctions, element);
             }
@@ -58,7 +57,6 @@ public class CatalogPage {
      */
     public CurrencyWrapper getCurrencyByName(final String name) {
         Optional<CurrencyWrapper> wrapper = Iterables.tryFind(getAllCurrencies(), new Predicate<CurrencyWrapper>() {
-            @Override
             public boolean apply(CurrencyWrapper currencyWrapper) {
                 return currencyWrapper.getCurrencyName().contains(name);
             }
@@ -75,7 +73,6 @@ public class CatalogPage {
         List<WebElement> items = baseFunctions.findElements(FILTER_ITEM);
         List<FilterWrapper> result = new ArrayList<FilterWrapper>();
         Iterables.addAll(result, Iterables.transform(items, new Function<WebElement, FilterWrapper>() {
-            @Override
             public FilterWrapper apply(WebElement webElement) {
                 return new FilterWrapper(baseFunctions, webElement);
             }
@@ -92,7 +89,6 @@ public class CatalogPage {
      */
     public FilterWrapper getFilterByName(final String name) {
         Optional<FilterWrapper> wrapper = Iterables.tryFind(getAllFilterItems(), new Predicate<FilterWrapper>() {
-            @Override
             public boolean apply(FilterWrapper filterWrapper) {
                 return filterWrapper.getFilterName().equals(name);
             }
@@ -121,7 +117,6 @@ public class CatalogPage {
         List<WebElement> catalogItem = baseFunctions.findElements(CATALOG_ITEM);
         List<ItemWrapper> result = new ArrayList<ItemWrapper>();
         Iterables.addAll(result, Iterables.transform(catalogItem, new Function<WebElement, ItemWrapper>() {
-            @Override
             public ItemWrapper apply(WebElement webElement) {
                 return new ItemWrapper(baseFunctions, webElement);
             }
